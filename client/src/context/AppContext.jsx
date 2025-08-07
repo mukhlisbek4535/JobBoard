@@ -73,6 +73,7 @@ export const AppContextProvider = (props) => {
         headers: { Authorization: `Bearer ${token}` },
       });
       console.log("This is FethUserData", data);
+      console.log("req.auth", data.issue);
       if (data.success) {
         setUserData(data.user);
       } else toast.error(data.message);
