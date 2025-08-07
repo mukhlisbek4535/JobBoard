@@ -14,6 +14,7 @@ export const getUserData = async (req, res) => {
       return res.json({
         success: false,
         message: "User Not Found....where the hell is it coming from?",
+        issue: req.auth,
       });
     }
 
