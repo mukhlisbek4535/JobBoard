@@ -8,7 +8,7 @@ export const getUserData = async (req, res) => {
   const userId = req.auth.userId;
 
   try {
-    const user = await User.findById(userId);
+    const user = await User.findOne({ _id: userId });
 
     if (!user) {
       return res.json({
