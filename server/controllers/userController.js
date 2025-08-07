@@ -11,7 +11,10 @@ export const getUserData = async (req, res) => {
     const user = await User.findOne({ _id: userId });
 
     if (!user) {
-      return res.json({ success: false, message: "User Not Found" });
+      return res.json({
+        success: false,
+        message: "User Not Found....where the hell is it coming from?",
+      });
     }
 
     res.json({ success: true, user });
