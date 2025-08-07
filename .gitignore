@@ -1,1 +1,6 @@
 node_modules
+
+#ignore .env file
+.env
+
+How_To_Run_Project.pdf

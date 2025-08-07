@@ -19,7 +19,13 @@ connectDB();
 await connectCloudinary();
 
 // Middlewares
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://job-board-ebon-kappa.vercel.app/"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(clerkMiddleware());
 
