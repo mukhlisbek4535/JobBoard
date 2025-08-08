@@ -68,6 +68,7 @@ export const AppContextProvider = (props) => {
   const fetchUserData = async () => {
     try {
       const token = await getToken();
+      console.log("This is Clerk Token", token);
 
       const { data } = await axios.get(backendUrl + "/api/users/user", {
         headers: { Authorization: `Bearer ${token}` },
@@ -122,7 +123,7 @@ export const AppContextProvider = (props) => {
 
   // Fetch User's Applications & Data if User is Logged In
   useEffect(() => {
-    if (user) {
+    if (user && user.id) {
       fetchUserData();
       fetchUserApplications();
     }
