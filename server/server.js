@@ -26,6 +26,8 @@ app.use(
     credentials: true,
   })
 );
+
+app.post("/webhooks", express.raw({ type: "application/json" }), clerkWebhooks);
 app.use(express.json());
 app.use(clerkMiddleware());
 
@@ -34,7 +36,7 @@ app.get("/", (req, res) => res.send("API Working"));
 app.get("/debug-sentry", function mainHandler(req, res) {
   throw new Error("My first Sentry error!");
 });
-app.post("/webhooks", express.raw({ type: "application/json" }), clerkWebhooks);
+
 app.use("/api/company", companyRoutes);
 app.use("/api/jobs", jobRoutes);
 app.use("/api/users", userRoutes);
