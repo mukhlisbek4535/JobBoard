@@ -36,13 +36,30 @@ export const clerkWebhooks = async (req, res) => {
           resume: "",
         };
         try {
-          const user = await User.findOneAndUpdate(
-            { email: userData.email }, // search by email
-            userData, // update with new data
-            { upsert: true, new: true } // create if not exists
-          );
-          console.log("✅ User saved/updated in DB:", user);
-          res.status(200).json({ success: true });
+          const existingUser = await User.findOne({
+            email: data.email_addresses[0].email_address,
+          });
+
+          if (existingUser) {
+            // update only allowed fields
+            existingUser.name = data.first_name + " " + data.last_name;
+            existingUser.image = data.image_url;
+            existingUser.resume = existingUser.resume || "";
+            await existingUser.save();
+            console.log("✅ User updated in DB:", existingUser);
+            res.status(200).json({ success: true });
+          } else {
+            // create new user with _id from Clerk
+            const createdUser = await User.create({
+              _id: data.id,
+              email: data.email_addresses[0].email_address,
+              name: data.first_name + " " + data.last_name,
+              image: data.image_url,
+              resume: "",
+            });
+            console.log("✅ New user saved to DB:", createdUser);
+            res.status(200).json({ success: true });
+          }
 
           //   please.....................
           //   const createdUser = await User.create(userData);
