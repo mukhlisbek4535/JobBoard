@@ -36,9 +36,18 @@ export const clerkWebhooks = async (req, res) => {
           resume: "",
         };
         try {
-          const createdUser = await User.create(userData);
-          console.log("✅ User saved to DB:", createdUser);
+          const user = await User.findOneAndUpdate(
+            { email: userData.email }, // search by email
+            userData, // update with new data
+            { upsert: true, new: true } // create if not exists
+          );
+          console.log("✅ User saved/updated in DB:", user);
           res.status(200).json({ success: true });
+
+          //   please.....................
+          //   const createdUser = await User.create(userData);
+          //   console.log("✅ User saved to DB:", createdUser);
+          //   res.status(200).json({ success: true });
         } catch (err) {
           console.error("❌ Error saving user:", err);
           res.status(500).json({ success: false, error: err.message });
