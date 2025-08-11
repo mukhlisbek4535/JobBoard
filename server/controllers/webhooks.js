@@ -27,6 +27,7 @@ export const clerkWebhooks = async (req, res) => {
     // Switch Cases for differernt Events
     switch (type) {
       case "user.created": {
+        console.log("logging the type in the case: ", type);
         const userData = {
           _id: data.id,
           email: data.email_addresses[0].email_address,
@@ -34,9 +35,14 @@ export const clerkWebhooks = async (req, res) => {
           image: data.image_url,
           resume: "",
         };
-        await User.create(userData);
-        res.json({ user: userData });
-        console.log("User created:", userData);
+        try {
+          const createdUser = await User.create(userData);
+          console.log("✅ User saved to DB:", createdUser);
+          res.status(200).json({ success: true });
+        } catch (err) {
+          console.error("❌ Error saving user:", err);
+          res.status(500).json({ success: false, error: err.message });
+        }
         break;
       }
 
