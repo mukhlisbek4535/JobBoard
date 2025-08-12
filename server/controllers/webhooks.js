@@ -11,14 +11,25 @@ async function upsertUser(data) {
     resume: "",
   };
 
-  // upsert: true = create if not found
-  const updatedUser = await User.findByIdAndUpdate(data.id, userDoc, {
-    new: true,
-    upsert: true,
-    setDefaultsOnInsert: true,
+  const existingUser = await User.findOne({
+    $or: [{ _id: data.id }, { email: userDoc.email }],
   });
 
-  return updatedUser;
+  if (existingUser) {
+    // Merge changes into existing user
+    Object.assign(existingUser, { ...userDoc, _id: existingUser._id });
+    return await existingUser.save();
+  } else {
+    return await User.create(userDoc);
+  }
+  // upsert: true = create if not found
+  //   const updatedUser = await User.findByIdAndUpdate(data.id, userDoc, {
+  //     new: true,
+  //     upsert: true,
+  //     setDefaultsOnInsert: true,
+  //   });
+
+  //   return updatedUser;
 }
 
 // API Controller Function to Manage Clerk User with database
