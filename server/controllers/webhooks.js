@@ -17,7 +17,11 @@ async function upsertUser(data) {
 
   if (existingUser) {
     // Merge changes into existing user
-    Object.assign(existingUser, { ...userDoc, _id: existingUser._id });
+    existingUser.name = userDoc.name;
+    existingUser.image = userDoc.image;
+    existingUser.resume = existingUser.resume || "";
+    existingUser.email = userDoc.email; // Update email if it has changed
+    // Object.assign(existingUser, { ...userDoc, _id: existingUser._id });
     return await existingUser.save();
   } else {
     return await User.create(userDoc);
