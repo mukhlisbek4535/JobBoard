@@ -28,12 +28,13 @@ const Dashboard = () => {
       {/* Navbar for Recuriter Panel */}
       <div className="shadow py-4">
         <div className="px-5 flex justify-between items-center">
-          <img
-            onClick={() => navigate("/")}
-            className="max-sm:w-32 cursor-pointer"
-            src={assets.logo}
-            alt=""
-          />
+          <div className="flex items-center gap-1">
+            <img height={37} width={37} src={assets.company_logo} alt="" />
+            <div className="flex items-center gap-0 mt-1">
+              <span className="font-bold text-slate-700 text-2xl">Insta</span>
+              <span className="font-bold text-cyan-500 text-2xl">Jobs</span>
+            </div>
+          </div>
           {companyData && (
             <div className="flex items-center gap-3">
               <p className="max-sm:hidden">Welcome, {companyData.name}</p>
