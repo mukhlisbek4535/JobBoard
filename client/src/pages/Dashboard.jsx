@@ -73,7 +73,7 @@ const Dashboard = () => {
               to={"/dashboard/add-job"}
             >
               <img className="min-w-4" src={assets.add_icon} alt="" />
-              <p className="max-sm:hidden">Add Job</p>
+              <p className="max-sm:hidden">Add Jobs</p>
             </NavLink>
 
             <NavLink
