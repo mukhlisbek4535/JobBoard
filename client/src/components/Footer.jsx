@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div className="container px-4 2xl:px-20 mx-auto flex items-center justify-between gap-4 py-3 -mt-20">
       <div className="flex items-center gap-1">
-        <img height={37} width={37} src={assets.company_logo} alt="" />
+        <img height={37} width={37} src={assets.company_logo} alt="InstaJobs" />
         <div className="flex items-center gap-0 mt-1">
           <span className="font-bold text-slate-700 text-2xl">Insta</span>
           <span className="font-bold text-cyan-500 text-2xl">Jobs</span>
@@ -14,9 +14,17 @@ const Footer = () => {
         Copyright @Mukhlisbek.IO | All rights reserved.
       </p>
       <div className="flex gap-2.5">
-        <img width={38} src={assets.facebook_icon} alt="" />
-        <img width={38} src={assets.twitter_icon} alt="" />
-        <img width={38} src={assets.instagram_icon} alt="" />
+        <img
+          width={38}
+          src={assets.facebook_icon}
+          alt="Reach Out By FaceBook"
+        />
+        <img width={38} src={assets.twitter_icon} alt="Reach Out By Twitter" />
+        <img
+          width={38}
+          src={assets.instagram_icon}
+          alt="Reach Out By InstaGram"
+        />
       </div>
     </div>
   );

@@ -95,7 +95,7 @@ const RecruiterLogin = () => {
                 <img
                   className="w-16 rounded-full"
                   src={image ? URL.createObjectURL(image) : assets.upload_area}
-                  alt=""
+                  alt="Image Upload Area"
                 />
                 <input
                   onChange={(e) => setImage(e.target.files[0])}
@@ -113,7 +113,7 @@ const RecruiterLogin = () => {
           <>
             {state !== "Login" && (
               <div className="border px-4 py-2 flex items-center gap-2 rounded-full mt-5">
-                <img src={assets.person_icon} alt="" />
+                <img src={assets.person_icon} alt="Person" />
                 <input
                   className="outline-none text-sm"
                   onChange={(e) => setName(e.target.value)}
@@ -126,7 +126,7 @@ const RecruiterLogin = () => {
             )}
 
             <div className="border px-4 py-2 flex items-center gap-2 rounded-full mt-5">
-              <img src={assets.email_icon} alt="" />
+              <img src={assets.email_icon} alt="Email" />
               <input
                 className="outline-none text-sm"
                 onChange={(e) => setEmail(e.target.value)}
@@ -138,7 +138,7 @@ const RecruiterLogin = () => {
             </div>
 
             <div className="border px-4 py-2 flex items-center gap-2 rounded-full mt-5">
-              <img src={assets.lock_icon} alt="" />
+              <img src={assets.lock_icon} alt="Lock" />
               <input
                 className="outline-none text-sm"
                 onChange={(e) => setPassword(e.target.value)}
@@ -194,7 +194,7 @@ const RecruiterLogin = () => {
           onClick={() => setShowRecruiterLogin(false)}
           className="absolute top-5 right-5 cursor-pointer"
           src={assets.cross_icon}
-          alt=""
+          alt="Closing Icon"
         />
       </form>
     </div>

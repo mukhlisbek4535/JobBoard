@@ -28,7 +28,11 @@ const Hero = () => {
         </p>
         <div className="flex items-center justify-between bg-white rounded text-gray-600 max-w-xl pl-4 mx-4 sm:mx-auto">
           <div className="flex items-center">
-            <img className="h-4 sm:h-5" src={assets.search_icon} alt="" />
+            <img
+              className="h-4 sm:h-5"
+              src={assets.search_icon}
+              alt="Enter Any Title"
+            />
             <input
               type="text"
               placeholder="Search for jobs"
@@ -37,7 +41,11 @@ const Hero = () => {
             />
           </div>
           <div className="flex items-center">
-            <img className="h-4 sm:h-5" src={assets.location_icon} alt="" />
+            <img
+              className="h-4 sm:h-5"
+              src={assets.location_icon}
+              alt="Enter Any Location"
+            />
             <input
               type="text"
               placeholder="Location"
@@ -57,12 +65,20 @@ const Hero = () => {
       <div className="border border-gray-300 shadow-md mx-2 mt-5 p-6 rounded-md flex">
         <div className="flex justify-center gap-10 lg:gap-16 flex-wrap">
           <p className="font-medium">Trusted by</p>
-          <img className="h-6" src={assets.microsoft_logo} alt="" />
-          <img className="h-6" src={assets.walmart_logo} alt="" />
-          <img className="h-6" src={assets.accenture_logo} alt="" />
-          <img className="h-6" src={assets.samsung_logo} alt="" />
-          <img className="h-6" src={assets.amazon_logo} alt="" />
-          <img className="h-6" src={assets.adobe_logo} alt="" />
+          <img
+            className="h-6"
+            src={assets.microsoft_logo}
+            alt="Microsoft Logo"
+          />
+          <img className="h-6" src={assets.walmart_logo} alt="Walmart Logo" />
+          <img
+            className="h-6"
+            src={assets.accenture_logo}
+            alt="Accenture Logo"
+          />
+          <img className="h-6" src={assets.samsung_logo} alt="Samsung Logo" />
+          <img className="h-6" src={assets.amazon_logo} alt="Amazon Logo" />
+          <img className="h-6" src={assets.adobe_logo} alt="Adobe Logo" />
         </div>
       </div>
     </div>

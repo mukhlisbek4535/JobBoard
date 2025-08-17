@@ -24,7 +24,7 @@ const Navbar = () => {
             src={assets.company_logo}
             height={37}
             width={37}
-            alt=""
+            alt="Company Logo"
           />
           <span className="font-bold text-slate-700 text-2xl">Insta</span>
           <span className="text-cyan-500 font-bold text-2xl">Jobs</span>

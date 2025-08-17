@@ -81,7 +81,7 @@ const JobListing = () => {
                       }
                       className="cursor-pointer"
                       src={assets.cross_icon}
-                      alt=""
+                      alt="Closing Icon"
                     />
                   </span>
                 )}
@@ -94,7 +94,7 @@ const JobListing = () => {
                       }
                       className="cursor-pointer"
                       src={assets.cross_icon}
-                      alt=""
+                      alt="Closing Icon"
                     />
                   </span>
                 )}
@@ -167,7 +167,7 @@ const JobListing = () => {
               <img
                 onClick={() => setCurrentPage(Math.max(currentPage - 1), 1)}
                 src={assets.left_arrow_icon}
-                alt=""
+                alt="Back"
               />
             </a>
             {Array.from({ length: Math.ceil(filteredJobs.length / 6) }).map(
@@ -197,7 +197,7 @@ const JobListing = () => {
                   )
                 }
                 src={assets.right_arrow_icon}
-                alt=""
+                alt="Forward"
               />
             </a>
           </div>
