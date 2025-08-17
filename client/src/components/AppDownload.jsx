@@ -19,7 +19,10 @@ const AppDownload = () => {
                 alt="Get It On Google Play"
               />
             </a>
-            <a href="#" className="inline-block">
+            <a
+              href="#"
+              className="inline-block hover:scale-105 transition-transform active:scale-95"
+            >
               <img
                 className="h-12"
                 src={assets.app_store}
