@@ -11,7 +11,7 @@ const Footer = () => {
         </div>
       </div>
       <p className="flex-1 border-l mt-2 border-gray-400 pl-4 text-sm text-gray-500 max-sm:hidden">
-        Copyright @Mukhlisbek.IO | All rights reserved.
+        Copyright @Mukhlisbek.SWE | All rights reserved.
       </p>
       <div className="flex gap-2.5">
         <img
