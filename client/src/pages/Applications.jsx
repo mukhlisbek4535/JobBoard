@@ -122,7 +122,7 @@ const Applications = () => {
             {userApplications.length === 0 && (
               <tr>
                 <td colSpan="5" className="text-gray-500 text-center py-4">
-                  You haven’t applied to any jobs yet.
+                  You haven&apos;t applied to any jobs yet.
                 </td>
               </tr>
             )}

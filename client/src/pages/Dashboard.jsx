@@ -42,7 +42,7 @@ const Dashboard = () => {
                 <img
                   className="w-8 border rounded-full"
                   src={companyData.image}
-                  alt=""
+                  alt="Company Logo"
                 />
                 <div className="absolute hidden group-hover:block top-0 right-0 z-10 text-black rounded  pt-12">
                   <ul className="list-none m-0 p-2 bg-white rounded-md border text-sm">
@@ -72,7 +72,7 @@ const Dashboard = () => {
               }
               to={"/dashboard/add-job"}
             >
-              <img className="min-w-4" src={assets.add_icon} alt="" />
+              <img className="min-w-4" src={assets.add_icon} alt="Add Job" />
               <p className="max-sm:hidden">Add Jobs</p>
             </NavLink>
 
@@ -84,7 +84,11 @@ const Dashboard = () => {
               }
               to={"/dashboard/manage-jobs"}
             >
-              <img className="min-w-4" src={assets.home_icon} alt="" />
+              <img
+                className="min-w-4"
+                src={assets.home_icon}
+                alt="Manage Jobs"
+              />
               <p className="max-sm:hidden">Manage Jobs</p>
             </NavLink>
 
@@ -96,7 +100,11 @@ const Dashboard = () => {
               }
               to={"/dashboard/view-applications"}
             >
-              <img className="min-w-4" src={assets.person_tick_icon} alt="" />
+              <img
+                className="min-w-4"
+                src={assets.person_tick_icon}
+                alt="View Applications"
+              />
               <p className="max-sm:hidden">View Applications</p>
             </NavLink>
           </ul>
